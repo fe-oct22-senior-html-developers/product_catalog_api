@@ -1,4 +1,4 @@
-import { createServer } from './src/createServer.js';
+import { createServer } from './createServer.js';
 
 const PORT = 3000;
 
