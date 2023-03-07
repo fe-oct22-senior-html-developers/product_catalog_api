@@ -1,6 +1,6 @@
 'use strict';
 
-import { createServer } from './src/createServer';
+import { createServer } from './createServer';
 
 const PORT = process.env.PORT || 3000;
 
