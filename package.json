@@ -2,15 +2,13 @@
   "name": "phone_catalog_api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "type": "module",
+  "main": "index.ts",
   "scripts": {
-    "start": "node src/server.mjs",
-    "service": "nodemon src/server.mjs",
     "format": "prettier --write . --ignore-path .gitignore",
     "lint": "eslint . --ignore-path .gitignore",
     "fix-style": "npm run format && npm run lint -- --fix",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "start": "nodemon index.ts"
   },
   "keywords": [],
   "author": "",
@@ -18,7 +16,11 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.18.2",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "pg": "^8.9.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.29.0",
+    "sequelize-typescript": "^2.1.5"
   },
   "devDependencies": {
     "@mate-academy/eslint-config": "0.0.20",
@@ -27,17 +29,18 @@
     "@types/node": "^18.14.0",
     "@typescript-eslint/eslint-plugin": "^5.54.0",
     "@typescript-eslint/parser": "^5.54.0",
-    "eslint": "^8.35.0",
+    "eslint": "8.22.0",
     "eslint-config-xo": "^0.43.1",
     "eslint-config-xo-typescript": "^0.56.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.2",
     "nodemon": "^2.0.20",
     "prettier": "2.8.4",
+    "sequelize-cli": "^6.6.0",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.5"
   },
   "lint-staged": {
-    "*.js": "npm run lint"
+    "*.ts": "npm run lint"
   }
 }

@@ -1,6 +1,8 @@
-import { createServer } from './createServer.js';
+'use strict';
 
-const PORT = 3000;
+import { createServer } from './src/createServer';
+
+const PORT = process.env.PORT || 3000;
 
 createServer().listen(PORT, () => {
   // eslint-disable-next-line no-console
