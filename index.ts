@@ -1,3 +1,5 @@
+'use strict';
+
 import { createServer } from './src/createServer.js';
 
 const PORT = 3000;
