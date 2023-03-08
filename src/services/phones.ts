@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { Phone } from '../types/Phone';
+import { Phone } from '../types/phone';
 
 const phones: Phone[] = JSON.parse(
   fs.readFileSync(path.resolve('./api/phones.json'), 'utf-8'),
