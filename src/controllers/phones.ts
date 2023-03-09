@@ -39,7 +39,12 @@ export const getPhoneInfoController = (req: Request, res: Response) => {
         return;
       }
 
-      res.send(data);
+      const result = {
+        phoneDetails: data,
+        phone: JSON.stringify(findPhone(phoneId)),
+      };
+
+      res.send(JSON.stringify(result));
     },
   );
 };
