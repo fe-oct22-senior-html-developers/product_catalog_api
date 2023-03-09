@@ -2,13 +2,22 @@
 import { Request, Response } from 'express';
 import path from 'path';
 import fs from 'fs';
+import url from 'url';
 import {
   getBestDiscounts,
   getNewest,
   getPhonesAmount,
   findPhone,
   getRecommended,
+  getPhonesWithPagination,
 } from '../services/phones';
+
+export const getPhonesController = (req: Request, res: Response) => {
+  // eslint-disable-next-line node/no-deprecated-api
+  const { sortBy, itemsNum, page } = url.parse(req.url, true).query;
+
+  res.send(getPhonesWithPagination(sortBy, itemsNum, page));
+};
 
 export const getNewestController = (req: Request, res: Response) => {
   const { amount } = req.body;
