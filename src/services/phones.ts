@@ -32,7 +32,7 @@ export const getPhonesWithPagination = (
       break;
   }
 
-  return phones.slice(+itemsNum * +page - +itemsNum, +itemsNum * +page);
+  return phonesCopy.slice(+itemsNum * +page - +itemsNum, +itemsNum * +page);
 };
 
 export const findPhone = (phoneId: string) =>
